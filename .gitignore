@@ -1,0 +1,56 @@
+node_modules/
+/.pnp/
+.pnp.js
+
+# Build outputs
+dist/
+build/
+out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+/.cache/
+
+# Env
+.env
+.env.*.local
+.env.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# SQLite databases
+*.db
+*.sqlite
+
+# Testing
+coverage/
+nyc_output/
+
+# Misc
+.DS_Store
+dist/

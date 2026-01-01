@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Booking {
+  id        Int      @id @default(autoincrement())
+  date      String
+  time      String
+  email     String
+  status    String   @default("confirmed")
+  createdAt DateTime @default(now())
+
+  @@unique([date, time])
+}
+
+model Outbox {
+  id        Int      @id @default(autoincrement())
+  bookingId Int
+  payload   String
+  processed Boolean  @default(false)
+  attempts  Int      @default(0)
+  createdAt DateTime @default(now())
+}

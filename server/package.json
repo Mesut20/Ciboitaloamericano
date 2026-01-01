@@ -1,0 +1,35 @@
+{
+  "name": "cibo-booking-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only --esm src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc -p .",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+    ,"dev:worker": "node --loader ts-node/esm src/emailWorker.ts",
+    "dev:node": "node --loader ts-node/esm src/index.ts",
+    "dev:worker:node": "node --loader ts-node/esm src/emailWorker.ts",
+    "start:build": "npm run build && node dist/index.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.4",
+    "zod": "^3.24.3",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.2",
+    "@types/express": "^4.17.21",
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.13",
+    "@types/nodemailer": "^6.4.7"
+  }
+}
